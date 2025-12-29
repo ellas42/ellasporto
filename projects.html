@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore my portfolio of past and current software development projects">
+    <title>Projects | Software Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">Portfolio</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="why-work-together.html">Why Work Together</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="faq-contact.html">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>My Projects</h1>
+                <p class="page-subtitle">A showcase of my work and expertise</p>
+            </div>
+        </section>
+
+        <section class="projects-content">
+            <div class="container">
+                <div class="projects-filter">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="current">Current</button>
+                    <button class="filter-btn" data-filter="past">Past</button>
+                </div>
+
+                <div class="projects-grid">
+                    <div class="project-card" data-category="current">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <span>Project Image</span>
+                            </div>
+                            <div class="project-badge current">Current</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>E-Commerce Platform</h3>
+                            <p>A full-stack e-commerce solution with advanced features including payment integration, inventory management, and admin dashboard.</p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">MongoDB</span>
+                                <span class="tag">Stripe API</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="current">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <span>Project Image</span>
+                            </div>
+                            <div class="project-badge current">Current</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Task Management App</h3>
+                            <p>Collaborative task management application with real-time updates, team collaboration features, and comprehensive analytics.</p>
+                            <div class="project-tags">
+                                <span class="tag">Vue.js</span>
+                                <span class="tag">Firebase</span>
+                                <span class="tag">TypeScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="past">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <span>Project Image</span>
+                            </div>
+                            <div class="project-badge past">Past</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Healthcare Management System</h3>
+                            <p>Comprehensive healthcare management system for clinics with patient records, appointment scheduling, and billing features.</p>
+                            <div class="project-tags">
+                                <span class="tag">Angular</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="past">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <span>Project Image</span>
+                            </div>
+                            <div class="project-badge past">Past</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Financial Analytics Dashboard</h3>
+                            <p>Real-time financial data visualization dashboard with interactive charts, reporting tools, and data export capabilities.</p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">D3.js</span>
+                                <span class="tag">Express</span>
+                                <span class="tag">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="past">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <span>Project Image</span>
+                            </div>
+                            <div class="project-badge past">Past</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Social Media Analytics Tool</h3>
+                            <p>Analytics platform for tracking social media performance across multiple platforms with automated reporting and insights.</p>
+                            <div class="project-tags">
+                                <span class="tag">Next.js</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">Redis</span>
+                                <span class="tag">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="current">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <span>Project Image</span>
+                            </div>
+                            <div class="project-badge current">Current</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Learning Management System</h3>
+                            <p>Educational platform with course management, student progress tracking, video streaming, and assessment tools.</p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">MongoDB</span>
+                                <span class="tag">AWS S3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Have a Project in Mind?</h2>
+                <p>Let's discuss how I can help bring your vision to life</p>
+                <a href="faq-contact.html" class="btn btn-primary">Get In Touch</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Software Developer Portfolio. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="faq-contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
