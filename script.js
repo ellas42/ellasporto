@@ -2,6 +2,30 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
+    const navbar = document.querySelector('.navbar');
+    
+    // Navbar hide/show on scroll
+    let lastScroll = 0;
+    let scrollThreshold = 10; // Minimum scroll distance to trigger hide/show
+    
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Only trigger if scrolled more than threshold
+        if (Math.abs(currentScroll - lastScroll) < scrollThreshold) {
+            return;
+        }
+        
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            // Scrolling down - hide navbar
+            navbar.classList.add('navbar-hidden');
+        } else {
+            // Scrolling up - show navbar
+            navbar.classList.remove('navbar-hidden');
+        }
+        
+        lastScroll = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+    });
 
     if (navToggle) {
         navToggle.addEventListener('click', function() {
