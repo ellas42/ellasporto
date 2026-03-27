@@ -1,265 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional Software Developer Portfolio - Expert in modern web development and software solutions">
-    <title>Software Developer Portfolio | Home</title>
-    <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ELSC</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <a href="index.html">Portfolio</a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#whys">Why Work Together</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="faq-contact.html">Contact</a></li>
-            </ul>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">ELSC</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#why">Why Me</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#contact" class="btn-outline">Get In Touch</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mob-link">About</a></li>
+      <li><a href="#why" class="mob-link">Why Me</a></li>
+      <li><a href="#projects" class="mob-link">Projects</a></li>
+      <li><a href="#contact" class="mob-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <h1 class="hero-title animate-up delay-2">
+        Crafting Digital<br/><em>Experiences</em> That<br/>Matter.
+      </h1>
+      <p class="hero-sub animate-up delay-3">
+        I build performant, elegant web applications from front-end to back-end — turning complex ideas into seamless products.
+      </p>
+      <div class="hero-actions animate-up delay-4">
+        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="#contact" class="btn-ghost">Let's Talk →</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint animate-up delay-5">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+    <div class="hero-number">01</div>
+  </section>
+
+  <!-- About -->
+  <section class="about section" id="about">
+    <div class="section-label">About Me</div>
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="about-img-wrap">
+          <div class="about-img-placeholder">
+            <span>AM</span>
+          </div>
+          <div class="about-img-frame"></div>
         </div>
-    </nav>
-
-    <main>
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">Make Your Ideas <br /> Come to Life</h1>
-                    <div class="hero-buttons">
-                        <a href="projects.html" class="btn btn-primary">View My Work</a>
-                        <a href="faq-contact.html" class="btn btn-secondary">Get In Touch</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="about">
-            <div class="about-title">
-                <h2>Get to Know Me</h2>
-            </div>
-            <div class="container">
-                <div class="about-grid">
-                    <div class="about-text">
-                        <h2>My Story</h2>
-                        <p>I'm a software developer with a passion for creating innovative solutions that solve real-world problems. With years of experience in the industry, I've worked on diverse projects ranging from small startups to enterprise-level applications.</p>
-                        <p>My journey in software development began with a curiosity about how things work behind the scenes. This curiosity evolved into a career where I get to build applications that make a difference in people's lives and businesses.</p>
-                        <p>I believe in writing clean, maintainable code and following best practices. I'm always learning and staying updated with the latest technologies and trends in the industry.</p>
-                    </div>
-                    <div class="about-image">
-                        <div class="placeholder-image">
-                            <span>Your Photo</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills-section">
-                    <h2>Technical Skills</h2>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h3>Frontend Development</h3>
-                            <ul>
-                                <li>HTML5, CSS3, JavaScript</li>
-                                <li>React, Vue.js, Angular</li>
-                                <li>TypeScript</li>
-                                <li>Responsive Design</li>
-                                <li>UI/UX Principles</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h3>Backend Development</h3>
-                            <ul>
-                                <li>Node.js, Python, Java</li>
-                                <li>RESTful APIs</li>
-                                <li>Database Design (SQL & NoSQL)</li>
-                                <li>Server Architecture</li>
-                                <li>Microservices</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h3>Tools & Technologies</h3>
-                            <ul>
-                                <li>Git & Version Control</li>
-                                <li>Docker & Containerization</li>
-                                <li>CI/CD Pipelines</li>
-                                <li>Cloud Platforms (AWS, Azure)</li>
-                                <li>Testing & Debugging</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="values-section">
-                    <h2>My Values</h2>
-                    <div class="values-grid">
-                        <div class="value-item">
-                            <h3>Quality First</h3>
-                            <p>I never compromise on code quality. Every line of code is written with care and attention to detail.</p>
-                        </div>
-                        <div class="value-item">
-                            <h3>Client Focus</h3>
-                            <p>Your success is my success. I work closely with clients to understand their needs and deliver solutions that exceed expectations.</p>
-                        </div>
-                        <div class="value-item">
-                            <h3>Continuous Learning</h3>
-                            <p>The tech industry evolves rapidly. I stay current with new technologies and methodologies to provide the best solutions.</p>
-                        </div>
-                        <div class="value-item">
-                            <h3>Transparency</h3>
-                            <p>Clear communication and honest feedback throughout the development process.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="features">
-            <div class="container">
-                <h2 class="section-title">What I Bring to Your Project</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🚀</div>
-                        <h3>Fast Delivery</h3>
-                        <p>Efficient development process ensuring timely project completion without compromising quality</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">💡</div>
-                        <h3>Innovative Solutions</h3>
-                        <p>Creative problem-solving approach using cutting-edge technologies and best practices</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔒</div>
-                        <h3>Secure & Reliable</h3>
-                        <p>Building applications with security and reliability as top priorities</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📱</div>
-                        <h3>Responsive Design</h3>
-                        <p>Creating seamless experiences across all devices and platforms</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">⚡</div>
-                        <h3>Performance Optimized</h3>
-                        <p>Optimized code and architecture for maximum performance and scalability</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🤝</div>
-                        <h3>Collaborative Approach</h3>
-                        <p>Working closely with clients to understand their vision and deliver exceptional results</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="whys" class="whys">
-    
-            <section class="why-content">
-                <div class="container">
-                    <div class="why-intro">
-                        <h2>What Makes Our Collaboration Special</h2>
-                        <p>Choosing the right developer for your project is crucial. Here's why working together will be a game-changer for your business:</p>
-                    </div>
-    
-                    <div class="benefits-section">
-                        <div class="benefit-card">
-                            <div class="benefit-number">01</div>
-                            <h3>Proven Track Record</h3>
-                            <p>Years of successful project deliveries across various industries. I bring experience and expertise that translates into reliable, high-quality results for your project.</p>
-                        </div>
-                        <div class="benefit-card">
-                            <div class="benefit-number">02</div>
-                            <h3>Tailored Solutions</h3>
-                            <p>Every project is unique. I take time to understand your specific needs, goals, and constraints to deliver solutions that fit perfectly with your business objectives.</p>
-                        </div>
-                        <div class="benefit-card">
-                            <div class="benefit-number">03</div>
-                            <h3>Clear Communication</h3>
-                            <p>No technical jargon or hidden surprises. I keep you informed every step of the way with regular updates, clear explanations, and transparent progress reports.</p>
-                        </div>
-                        <div class="benefit-card">
-                            <div class="benefit-number">04</div>
-                            <h3>Future-Proof Development</h3>
-                            <p>I build applications that are scalable, maintainable, and ready to grow with your business. Your investment today will serve you well in the future.</p>
-                        </div>
-                        <div class="benefit-card">
-                            <div class="benefit-number">05</div>
-                            <h3>Cost-Effective Approach</h3>
-                            <p>Efficient development practices mean faster delivery and lower costs. I focus on delivering maximum value while respecting your budget constraints.</p>
-                        </div>
-                        <div class="benefit-card">
-                            <div class="benefit-number">06</div>
-                            <h3>Ongoing Support</h3>
-                            <p>Your project doesn't end at launch. I provide ongoing support, maintenance, and updates to ensure your application continues to perform optimally.</p>
-                        </div>
-                    </div>
-
-                    </div>
-            </section>
-
-                    <section id="process-carousel" class="process-carousel">
-                        <div class="process-header">
-                            <h2>My Development Process</h2>
-                            <p>A streamlined approach to deliver exceptional results</p>
-                        </div>
-                        <div class="group">
-                            <div class="process-step">
-                                <div class="step-number">01</div>
-                                <h3>Discovery & Planning</h3>
-                                <p>We start by understanding your vision, requirements, and goals. Together, we'll create a detailed plan that outlines the project scope and timeline.</p>
-                            </div>
-                            <div class="process-step">
-                                <div class="step-number">02</div>
-                                <h3>Development & Iteration</h3>
-                                <p>I'll build your solution using best practices, keeping you involved with regular demos and feedback sessions to ensure we're on the right track.</p>
-                            </div>
-                            <div class="process-step">
-                                <div class="step-number">03</div>
-                                <h3>Testing & Launch</h3>
-                                <p>Thorough testing ensures everything works perfectly. Once approved, we'll launch your project and provide comprehensive documentation.</p>
-                            </div>
-                            <div class="process-step">
-                                <div class="step-number">04</div>
-                                <h3>Growth & Optimization</h3>
-                                <p>After launch, I'll monitor performance, gather feedback, and implement improvements to help your application reach its full potential.</p>
-                            </div>
-                        </div>
-                    </section>
-                            
-
-
-        <section id="projects" class="projects">
-                <div class="projects-container">
-                    <h2>My Projects</h2>
-                    <p>A showcase of my work and expertise</p>
-                    <a href="projects.html" class="btn btn-primary">View All Projects</a>
-                </div>
-        </section>
-        
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Software Developer Portfolio. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="projects.html">Projects</a>
-                <a href="faq-contact.html">Contact</a>
-            </div>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-num" data-count="1">0</span>+
+            <span class="stat-label">Years Exp.</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="10">0</span>+
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="10">0</span>+
+            <span class="stat-label">Clients</span>
+          </div>
         </div>
-    </footer>
+      </div>
+      <div class="about-right">
+        <h2 class="section-title">Building things I'm <em>proud</em> of.</h2>
+        <p class="about-text">
+          I'm a full stack developer with a passion for crafting clean, maintainable code and beautiful user experiences. I specialize in modern JavaScript frameworks, scalable APIs, and everything in between.
+        </p>
+        <p class="about-text">
+          When I'm not writing code, I'm exploring design systems, contributing to open source, or tinkering with new technologies. I believe great software is where engineering rigor meets thoughtful design.
+        </p>
+        <div class="skills-grid">
+          <div class="skill-item"><span class="skill-dot"></span>HTML5 / CSS3</div>
+          <div class="skill-item"><span class="skill-dot"></span>JavaScript</div>
+          <div class="skill-item"><span class="skill-dot"></span>Node.js / Express.js</div>
+          <div class="skill-item"><span class="skill-dot"></span>PHP / Python</div>
+          <div class="skill-item"><span class="skill-dot"></span>MySQL / MongoDB</div>
+          <div class="skill-item"><span class="skill-dot"></span>REST APIs / Payment Integrations</div>
+        </div>
+        <a href="#contact" class="btn-primary mt-lg">Work With Me</a>
+      </div>
+    </div>
+    <div class="section-number">02</div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- Why Work Together -->
+  <section class="why section" id="why">
+    <div class="section-label">Why Choose Me</div>
+    <h2 class="section-title center">Why We Should <em>Work Together</em></h2>
+    <p class="section-sub center">I don't just write code, I think holistically about products, users, and business goals.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">◈</div>
+        <h3>Full-Stack Ownership</h3>
+        <p>From database schema to pixel-perfect UI, I own the full stack — reducing handoff friction and accelerating delivery.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">◉</div>
+        <h3>Performance-First</h3>
+        <p>I obsess over load times, Core Web Vitals, and runtime efficiency. Fast software isn't a feature — it's a standard.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">◫</div>
+        <h3>Clear Communication</h3>
+        <p>No black boxes. I keep stakeholders informed, document decisions, and translate tech complexity into plain language.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">◬</div>
+        <h3>Scalable Architecture</h3>
+        <p>I design systems that grow with your business — clean code, sensible abstractions, and maintainability baked in.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">◭</div>
+        <h3>Design Sensibility</h3>
+        <p>I bridge the gap between engineers and designers — understanding visual hierarchy, UX patterns, and aesthetic craft.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">◮</div>
+        <h3>Reliable & Punctual</h3>
+        <p>Deadlines are respected. Estimates are honest. You'll never wonder where your project stands.</p>
+      </div>
+    </div>
+    <div class="section-number">03</div>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects section" id="projects">
+    <div class="section-label">My Work</div>
+    <h2 class="section-title">Selected <em>Projects</em></h2>
+    <p class="section-sub">A showcase of products and platforms I've built end-to-end.</p>
+
+    <div class="carousel-container">
+      <div class="carousel-track" id="carouselTrack">
+
+        <div class="project-card" data-index="0">
+          <div class="project-thumb">
+            <div class="project-thumb-bg" style="--c1:#1a1a2e;--c2:#16213e;"></div>
+            <div class="project-thumb-label">E-Commerce Website</div>
+            <div class="project-thumb-icon">⬡</div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-tag">PHP</span>
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">HTML5 & CSS3</span>
+            </div>
+            <h3 class="project-name">Oursy Shop</h3>
+            <p class="project-desc">A clothing website without payments integration. Order function using PHPmailer.</p>
+            <div class="project-links">
+              <a href="project1.html" class="project-detail-btn">View Details →</a>
+              <a href="https://oursy.shop" class="project-live">Live ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-index="1">
+          <div class="project-thumb">
+            <div class="project-thumb-bg" style="--c1:#0d1b2a;--c2:#1b2838;"></div>
+            <div class="project-thumb-label">Reservation System</div>
+            <div class="project-thumb-icon">⬢</div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">Stripe</span>
+              <span class="project-tag">PHP & PHPmailer</span>
+            </div>
+            <h3 class="project-name">Villa Sereno</h3>
+            <p class="project-desc">A luxury villa booking using Stripe.</p>
+            <div class="project-links">
+              <a href="project2.html" class="project-detail-btn">View Details →</a>
+              <a href="#" class="project-live">Live ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-index="2">
+          <div class="project-thumb">
+            <div class="project-thumb-bg" style="--c1:#1a0a2e;--c2:#2d1b4e;"></div>
+            <div class="project-thumb-label">Web App</div>
+            <div class="project-thumb-icon">⬟</div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-tag">Vue.js</span>
+              <span class="project-tag">Express</span>
+              <span class="project-tag">Redis</span>
+            </div>
+            <h3 class="project-name">PulseAnalytics</h3>
+            <p class="project-desc">Real-time analytics dashboard for content creators — tracking engagement metrics, audience growth, and revenue across multiple platforms.</p>
+            <div class="project-links">
+              <a href="project3.html" class="project-detail-btn">View Details →</a>
+              <a href="#" class="project-live">Live ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-index="3">
+          <div class="project-thumb">
+            <div class="project-thumb-bg" style="--c1:#0a1a10;--c2:#0f2a18;"></div>
+            <div class="project-thumb-label">Mobile-First</div>
+            <div class="project-thumb-icon">⬠</div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-tag">React Native</span>
+              <span class="project-tag">GraphQL</span>
+              <span class="project-tag">AWS</span>
+            </div>
+            <h3 class="project-name">Rootsy</h3>
+            <p class="project-desc">A community-driven recipe and meal planning app with AI-powered suggestions, grocery list sync, and social sharing features.</p>
+            <div class="project-links">
+              <a href="project4.html" class="project-detail-btn">View Details →</a>
+              <a href="#" class="project-live">Live ↗</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="prevBtn" aria-label="Previous">←</button>
+        <div class="carousel-dots" id="carouselDots">
+          <span class="dot-item active" data-dot="0"></span>
+          <span class="dot-item" data-dot="1"></span>
+          <span class="dot-item" data-dot="2"></span>
+          <span class="dot-item" data-dot="3"></span>
+        </div>
+        <button class="carousel-btn" id="nextBtn" aria-label="Next">→</button>
+      </div>
+      <div class="carousel-counter"><span id="currentSlide">01</span> / 04</div>
+    </div>
+    <div class="section-number">04</div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact section" id="contact">
+    <div class="section-label">Get In Touch</div>
+    <div class="contact-grid">
+      <div class="contact-left">
+        <h2 class="section-title">Let's Build<br/><em>Something</em><br/>Together.</h2>
+        <p class="contact-text">Have a project in mind? Whether it's a startup MVP, a platform revamp, or a complex integration — I'm here to help.</p>
+        <div class="contact-links">
+          <a href="mailto:ellalianaa06@gmail.com" class="contact-link">
+            <span class="contact-link-icon">✉</span>
+            ellalianaa06@gmail.com
+          </a>
+          <a href="https://github.com/ellas42" class="contact-link">
+            <span class="contact-link-icon">gh</span>
+            GitHub
+          </a>
+        </div>
+      </div>
+      <div class="contact-right">
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="john@email.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Project Inquiry" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary full-width" id="submitBtn">
+            <span>Send Message</span>
+            <span class="btn-arrow">→</span>
+          </button>
+          <div class="form-success" id="formSuccess">
+            Message sent! I'll get back to you shortly.
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="section-number">05</div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">EL</div>
+        <p>Full Stack Developer crafting digital experiences with precision and purpose.</p>
+      </div>
+      <div class="footer-nav">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#why">Why Me</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://github.com/ellas42">GitHub</a></li>
+          <li><a href="mailto:ellalianaa06@gmail.com">E-Mail</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Ella. All rights reserved.</span>
+      <span>Designed & Built by EL</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
-

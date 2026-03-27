@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rootsy — Alex Mercer</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-logo">AM<span class="dot">.</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#why">Why Me</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta"><a href="index.html#contact" class="btn-outline">Hire Me</a></div>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html#about" class="mob-link">About</a></li>
+      <li><a href="index.html#why" class="mob-link">Why Me</a></li>
+      <li><a href="index.html#projects" class="mob-link">Projects</a></li>
+      <li><a href="index.html#contact" class="mob-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <div class="detail-hero" style="--c1:#0a1a10;--c2:#0f2a18;">
+    <div class="detail-hero-bg"></div>
+    <div class="detail-hero-overlay"></div>
+    <div class="detail-hero-content">
+      <a href="index.html#projects" class="detail-back">← Back to Projects</a>
+      <span class="detail-type">Mobile-First App · 2023</span>
+      <h1 class="detail-title">Rootsy</h1>
+      <div class="detail-meta-row">
+        <span class="detail-tag">React Native</span>
+        <span class="detail-tag">GraphQL</span>
+        <span class="detail-tag">AWS</span>
+        <span class="detail-tag">OpenAI API</span>
+        <span class="detail-tag">Expo</span>
+        <span class="detail-year">2023</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-body">
+    <div class="detail-grid">
+      <div class="detail-main">
+        <h2 class="detail-section-title">Project <em>Overview</em></h2>
+        <p class="detail-text">
+          Rootsy is a community-driven recipe and meal planning app that brings people together around food. Users can discover recipes, save and remix them, plan weekly meals, and auto-generate grocery lists — all synced across devices. The app integrates with OpenAI to suggest recipes based on what's in your fridge, dietary preferences, and seasonal availability.
+        </p>
+        <p class="detail-text">
+          The social layer is at the heart of the product: users can follow each other, comment on recipes, share their weekly meal plans, and take part in community cooking challenges. Think Pinterest meets a personal chef meets a grocery list app.
+        </p>
+
+        <div class="detail-screens">
+          <div class="detail-screen" style="background:linear-gradient(135deg,#0a1a10,#0f2a18);">⬠</div>
+          <div class="detail-screen" style="background:linear-gradient(135deg,#0f2a18,#173d22);">◈</div>
+          <div class="detail-screen" style="background:linear-gradient(135deg,#07150d,#0a1a10);">◉</div>
+          <div class="detail-screen" style="background:linear-gradient(135deg,#0f2a18,#0a1a10);">◫</div>
+        </div>
+
+        <h2 class="detail-section-title">Technical <em>Challenges</em></h2>
+        <p class="detail-text">
+          Building a cross-platform mobile app with React Native and Expo required careful attention to native module compatibility, especially for camera access (ingredient scanning), push notifications, and gesture handling. I used Expo Router for file-based navigation and Reanimated 3 for fluid 60fps animations that feel native on both iOS and Android.
+        </p>
+        <p class="detail-text">
+          The GraphQL API (Apollo Server) was designed with a subscription layer so that social actions — likes, comments, new followers — arrive in real time. I used AWS AppSync for the managed subscription infrastructure and DynamoDB as the primary data store for its horizontal scalability at social-graph scale.
+        </p>
+
+        <h2 class="detail-section-title">Key <em>Features</em></h2>
+        <p class="detail-text">
+          Rootsy features AI-powered recipe suggestions based on fridge contents, weekly meal planner with drag-and-drop, auto-generated shareable grocery lists, ingredient barcode scanning, social feed with follows and comments, cooking challenges and leaderboards, offline support with sync on reconnect, and deep-link support for recipe sharing.
+        </p>
+
+        <div class="detail-cta">
+          <a href="#" class="btn-primary">App Store / Play Store <span class="btn-arrow">↗</span></a>
+          <a href="#" class="btn-outline">GitHub Repo</a>
+        </div>
+      </div>
+
+      <aside class="detail-sidebar">
+        <div class="detail-sidebar-card">
+          <h4>Role</h4>
+          <ul>
+            <li>Mobile + Backend Dev</li>
+            <li>AI Feature Integration</li>
+            <li>App Store Submission</li>
+          </ul>
+        </div>
+        <div class="detail-sidebar-card">
+          <h4>Tech Stack</h4>
+          <ul>
+            <li>React Native + Expo</li>
+            <li>Apollo GraphQL</li>
+            <li>AWS (AppSync, DynamoDB)</li>
+            <li>OpenAI GPT-4o</li>
+            <li>S3 + CloudFront</li>
+            <li>Expo Notifications</li>
+          </ul>
+        </div>
+        <div class="detail-sidebar-card">
+          <h4>Timeline</h4>
+          <ul>
+            <li>Duration: 7 months</li>
+            <li>Launched: Q3 2023</li>
+            <li>Team: 2 engineers</li>
+          </ul>
+        </div>
+        <div class="detail-sidebar-card">
+          <h4>Outcomes</h4>
+          <ul>
+            <li>18k+ downloads</li>
+            <li>4.6★ App Store rating</li>
+            <li>35k recipes created</li>
+            <li>Featured by Apple</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">AM<span class="dot">.</span></div>
+        <p>Full Stack Developer crafting digital experiences with precision and purpose.</p>
+      </div>
+      <div class="footer-nav">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Alex Mercer.</span>
+      <span>← <a href="index.html#projects" style="color:var(--gold)">Back to all projects</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumière Shop — Alex Mercer</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-logo">AM<span class="dot">.</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#why">Why Me</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta"><a href="index.html#contact" class="btn-outline">Hire Me</a></div>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html#about" class="mob-link">About</a></li>
+      <li><a href="index.html#why" class="mob-link">Why Me</a></li>
+      <li><a href="index.html#projects" class="mob-link">Projects</a></li>
+      <li><a href="index.html#contact" class="mob-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <div class="detail-hero" style="--c1:#0d1b2a;--c2:#1b2838;">
+    <div class="detail-hero-bg"></div>
+    <div class="detail-hero-overlay"></div>
+    <div class="detail-hero-content">
+      <a href="index.html#projects" class="detail-back">← Back to Projects</a>
+      <span class="detail-type">E-Commerce · 2024</span>
+      <h1 class="detail-title">Lumière Shop</h1>
+      <div class="detail-meta-row">
+        <span class="detail-tag">Next.js</span>
+        <span class="detail-tag">Stripe</span>
+        <span class="detail-tag">MongoDB</span>
+        <span class="detail-tag">Tailwind</span>
+        <span class="detail-tag">Vercel</span>
+        <span class="detail-year">2024</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-body">
+    <div class="detail-grid">
+      <div class="detail-main">
+        <h2 class="detail-section-title">Project <em>Overview</em></h2>
+        <p class="detail-text">
+          Lumière Shop is a luxury fashion e-commerce platform built for a boutique brand looking to move beyond Shopify and own their entire digital experience. The platform features editorial-style product pages, animated page transitions, a custom Stripe checkout flow, and a powerful admin panel for inventory, orders, and content management.
+        </p>
+        <p class="detail-text">
+          The client wanted an experience that felt more like entering a high-end boutique than browsing a commodity marketplace. Every micro-interaction was considered: from how products are revealed during scroll to how the cart drawer slides in and out.
+        </p>
+
+        <div class="detail-screens">
+          <div class="detail-screen" style="background:linear-gradient(135deg,#0d1b2a,#1b2838);">⬢</div>
+          <div class="detail-screen" style="background:linear-gradient(135deg,#1b2838,#2a3a4a);">◈</div>
+          <div class="detail-screen" style="background:linear-gradient(135deg,#0a1520,#1b2838);">◉</div>
+          <div class="detail-screen" style="background:linear-gradient(135deg,#162030,#0d1b2a);">◫</div>
+        </div>
+
+        <h2 class="detail-section-title">Technical <em>Challenges</em></h2>
+        <p class="detail-text">
+          The primary challenge was achieving consistent performance despite the richness of the visual design. I used Next.js ISR (Incremental Static Regeneration) to pre-render product pages, achieving sub-100ms TTFB on CDN-cached routes while keeping inventory data fresh. Image-heavy pages were optimised using next/image with blur placeholders and WebP conversion.
+        </p>
+        <p class="detail-text">
+          Integrating Stripe with a custom checkout required building a full backend order lifecycle — from cart creation, promo code validation, address verification, and payment intent confirmation to post-purchase email flows via Resend and webhook-based order fulfilment triggers.
+        </p>
+
+        <h2 class="detail-section-title">Key <em>Features</em></h2>
+        <p class="detail-text">
+          The platform delivers editorial product pages with immersive scroll animations, a persisted cart with guest and authenticated sessions, Stripe Elements checkout with Apple Pay / Google Pay, size guides, product filtering and search, wishlists, order tracking, a rich CMS-based admin panel, and automated email notifications.
+        </p>
+
+        <div class="detail-cta">
+          <a href="#" class="btn-primary">View Live Site <span class="btn-arrow">↗</span></a>
+          <a href="#" class="btn-outline">Case Study PDF</a>
+        </div>
+      </div>
+
+      <aside class="detail-sidebar">
+        <div class="detail-sidebar-card">
+          <h4>Role</h4>
+          <ul>
+            <li>Full Stack Developer</li>
+            <li>UX Engineering</li>
+            <li>Performance Optimisation</li>
+          </ul>
+        </div>
+        <div class="detail-sidebar-card">
+          <h4>Tech Stack</h4>
+          <ul>
+            <li>Next.js 14 (App Router)</li>
+            <li>MongoDB + Mongoose</li>
+            <li>Stripe Payments API</li>
+            <li>Resend (Email)</li>
+            <li>Vercel Edge Network</li>
+            <li>Cloudinary (Media)</li>
+          </ul>
+        </div>
+        <div class="detail-sidebar-card">
+          <h4>Timeline</h4>
+          <ul>
+            <li>Duration: 5 months</li>
+            <li>Launched: Q3 2024</li>
+            <li>Team: Solo</li>
+          </ul>
+        </div>
+        <div class="detail-sidebar-card">
+          <h4>Outcomes</h4>
+          <ul>
+            <li>3.2s → 0.8s LCP</li>
+            <li>+42% conversion rate</li>
+            <li>96 Lighthouse score</li>
+            <li>$120k GMV Month 1</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">AM<span class="dot">.</span></div>
+        <p>Full Stack Developer crafting digital experiences with precision and purpose.</p>
+      </div>
+      <div class="footer-nav">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Alex Mercer.</span>
+      <span>← <a href="index.html#projects" style="color:var(--gold)">Back to all projects</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

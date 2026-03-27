@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PulseAnalytics — Alex Mercer</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-logo">AM<span class="dot">.</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#why">Why Me</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta"><a href="index.html#contact" class="btn-outline">Hire Me</a></div>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html#about" class="mob-link">About</a></li>
+      <li><a href="index.html#why" class="mob-link">Why Me</a></li>
+      <li><a href="index.html#projects" class="mob-link">Projects</a></li>
+      <li><a href="index.html#contact" class="mob-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <div class="detail-hero" style="--c1:#1a0a2e;--c2:#2d1b4e;">
+    <div class="detail-hero-bg"></div>
+    <div class="detail-hero-overlay"></div>
+    <div class="detail-hero-content">
+      <a href="index.html#projects" class="detail-back">← Back to Projects</a>
+      <span class="detail-type">Web App · 2023</span>
+      <h1 class="detail-title">PulseAnalytics</h1>
+      <div class="detail-meta-row">
+        <span class="detail-tag">Vue.js</span>
+        <span class="detail-tag">Express</span>
+        <span class="detail-tag">Redis</span>
+        <span class="detail-tag">Chart.js</span>
+        <span class="detail-tag">OAuth2</span>
+        <span class="detail-year">2023</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-body">
+    <div class="detail-grid">
+      <div class="detail-main">
+        <h2 class="detail-section-title">Project <em>Overview</em></h2>
+        <p class="detail-text">
+          PulseAnalytics is a unified analytics dashboard built for content creators, letting them track engagement metrics, follower growth, and monetisation data across YouTube, Instagram, TikTok, and Twitch — all in one place. Instead of switching between 4 separate platform dashboards, creators get a single, clean view of what's working.
+        </p>
+        <p class="detail-text">
+          The product targeted mid-to-large creators (50k+ followers) who were managing content across multiple platforms and losing hours per week just trying to understand their data. PulseAnalytics aggregates it all, surfaces actionable insights, and lets users set growth goals and track them over time.
+        </p>
+
+        <div class="detail-screens">
+          <div class="detail-screen" style="background:linear-gradient(135deg,#1a0a2e,#2d1b4e);">⬟</div>
+          <div class="detail-screen" style="background:linear-gradient(135deg,#2d1b4e,#3d2060);">◈</div>
+          <div class="detail-screen" style="background:linear-gradient(135deg,#15082a,#1a0a2e);">◉</div>
+          <div class="detail-screen" style="background:linear-gradient(135deg,#0f0520,#2d1b4e);">◫</div>
+        </div>
+
+        <h2 class="detail-section-title">Technical <em>Challenges</em></h2>
+        <p class="detail-text">
+          Each platform's API has different rate limits, data shapes, and authentication flows. I built an abstraction layer that normalises data from all four APIs into a unified schema, with Redis caching to avoid repeat API calls and stay within rate limits. Background jobs (cron + workers) refresh data every hour per connected account.
+        </p>
+        <p class="detail-text">
+          The charting layer was one of the most interesting challenges — creating a consistent visual language across wildly different data types (views vs follows vs revenue) required a thoughtful data normalisation pipeline and a flexible Chart.js configuration system with custom tooltip renderers.
+        </p>
+
+        <h2 class="detail-section-title">Key <em>Features</em></h2>
+        <p class="detail-text">
+          PulseAnalytics offers cross-platform metric comparison, custom date range analysis, automated weekly email reports, goal tracking with progress indicators, top content performance leaderboards, audience demographic breakdowns, revenue trend analysis, and a public shareable profile link for brand deals and sponsorships.
+        </p>
+
+        <div class="detail-cta">
+          <a href="#" class="btn-primary">View Live App <span class="btn-arrow">↗</span></a>
+          <a href="#" class="btn-outline">GitHub Repo</a>
+        </div>
+      </div>
+
+      <aside class="detail-sidebar">
+        <div class="detail-sidebar-card">
+          <h4>Role</h4>
+          <ul>
+            <li>Full Stack Developer</li>
+            <li>API Integration</li>
+            <li>Data Visualisation</li>
+          </ul>
+        </div>
+        <div class="detail-sidebar-card">
+          <h4>Tech Stack</h4>
+          <ul>
+            <li>Vue 3 + Pinia</li>
+            <li>Node.js / Express</li>
+            <li>Redis (Cache + Queue)</li>
+            <li>Chart.js</li>
+            <li>PostgreSQL</li>
+            <li>OAuth 2.0 (4 APIs)</li>
+          </ul>
+        </div>
+        <div class="detail-sidebar-card">
+          <h4>Timeline</h4>
+          <ul>
+            <li>Duration: 6 months</li>
+            <li>Launched: Q4 2023</li>
+            <li>Team: 2 engineers</li>
+          </ul>
+        </div>
+        <div class="detail-sidebar-card">
+          <h4>Outcomes</h4>
+          <ul>
+            <li>1,400+ active users</li>
+            <li>4 platforms connected</li>
+            <li>2M data points/day</li>
+            <li>Featured in ProductHunt</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">AM<span class="dot">.</span></div>
+        <p>Full Stack Developer crafting digital experiences with precision and purpose.</p>
+      </div>
+      <div class="footer-nav">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Alex Mercer.</span>
+      <span>← <a href="index.html#projects" style="color:var(--gold)">Back to all projects</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
