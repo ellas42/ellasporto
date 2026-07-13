@@ -49,7 +49,8 @@ if (!empty($errors)) {
     exit();
 }
 
-$to = 'hello@kndr.site'; 
+$to = getenv('RECIPIENT_EMAIL') ?: 'hello@kndr.site';
+$fromAddress = getenv('SMTP_FROM') ?: 'hello@kndr.site';
 $subject = 'New Client Application: ' . $projectType;
 
 $emailBody = "New Client Application Received\n\n";
@@ -61,7 +62,7 @@ $emailBody .= "Budget Range: " . ($budget ? $budget : 'Not specified') . "\n";
 $emailBody .= "Timeline: " . ($timeline ? $timeline : 'Not specified') . "\n\n";
 $emailBody .= "Project Details:\n$message\n";
 
-$headers = "From: $email\r\n";
+$headers = "From: $fromAddress\r\n";
 $headers .= "Reply-To: $email\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
