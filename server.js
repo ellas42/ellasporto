@@ -8,12 +8,6 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const smtpHost = process.env.SMTP_HOST;
-const smtpPort = Number(process.env.SMTP_PORT || 587);
-const smtpUser = process.env.SMTP_USER;
-const smtpPass = process.env.SMTP_PASS;
-const smtpFrom = process.env.SMTP_FROM || process.env.SMTP_USER || 'hello@kndr.site';
-const recipientEmail = process.env.RECIPIENT_EMAIL || 'hello@kndr.site';
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -29,30 +23,20 @@ app.use((req, res, next) => {
     next();
 });
 
-const transporter = smtpHost && smtpUser && smtpPass
-  ? nodemailer.createTransport({
-      host: smtpHost,
-      port: smtpPort,
-      secure: smtpPort === 465,
-      auth: {
-        user: smtpUser,
-        pass: smtpPass
-      }
-    })
-  : null;
+const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT),
+    auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }
+});
 
-if (transporter) {
-    transporter.verify((error, success) => {
-        if (error) {
-            console.error('Email transporter verification failed:', error);
-        } else {
-            console.log('Email transporter is ready to send messages');
-        }
-    });
-} else {
-    console.warn('SMTP configuration is incomplete. Set SMTP_HOST, SMTP_USER, SMTP_PASS, and RECIPIENT_EMAIL in your .env file to send email.');
-}
 
+transporter.verify((error, success) => {
+    if (error) {
+        console.error('Email transporter verification failed:', error);
+    } else {
+        console.log('Email transporter is ready to send messages');
+    }
+});
 app.post('/submit-form.php', async (req, res) => {
     try {
         const { name, email, company, projectType, budget, timeline, message } = req.body;
@@ -74,19 +58,10 @@ app.post('/submit-form.php', async (req, res) => {
             });
         }
 
-        const logEntry = `${new Date().toISOString()} - New application from: ${name} (${email}) - Project: ${projectType}\n`;
-        fs.appendFileSync('applications.log', logEntry);
-
-        if (!transporter) {
-            return res.status(503).json({
-                success: false,
-                message: 'Email delivery is not configured yet. Your application was logged locally, but no email was sent.'
-            });
-        }
 
         const mailOptions = {
-            from: smtpFrom,
-            to: recipientEmail,
+            from: process.env.SMTP_USER || 'hello@kndr.site',
+            to: process.env.RECIPIENT_EMAIL || 'hello@kndr.site',
             subject: `New Client Application: ${projectType}`,
             text: `
 New Client Application Received
@@ -105,6 +80,10 @@ ${message}
         };
 
         await transporter.sendMail(mailOptions);
+
+             const logEntry = `${new Date().toISOString()} - New application from: ${name} (${email}) - Project: ${projectType}\n`;
+        fs.appendFileSync('applications.log', logEntry);
+
 
         res.json({
             success: true,
