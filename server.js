@@ -1,22 +1,18 @@
-// Simple Node.js server for form submission
-// Run with: node server.js
-// Requires: npm install express body-parser nodemailer
 
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const fs = require('fs');
 const path = require('path');
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('.'));
 
-// CORS middleware
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -27,32 +23,27 @@ app.use((req, res, next) => {
     next();
 });
 
-// Email transporter configuration
-// Update these settings with your email service provider
 const transporter = nodemailer.createTransport({
-    // Example for Gmail (requires app-specific password)
-    // service: 'gmail',
-    // auth: {
-    //     user: 'your-email@gmail.com',
-    //     pass: 'your-app-password'
-    // }
-    
-    // Example for SMTP
-    host: process.env.SMTP_HOST || 'smtp.example.com',
-    port: process.env.SMTP_PORT || 587,
-    secure: false,
-    auth: {
-        user: process.env.SMTP_USER || 'your-email@example.com',
-        pass: process.env.SMTP_PASS || 'your-password'
+  host: process.env.SMTP_HOST,
+  port: Number(process.env.SMTP_PORT),
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS
+  }
+});
+
+transporter.verify((error, success) => {
+    if (error) {
+        console.error('Email transporter verification failed:', error);
+    } else {
+        console.log('Email transporter is ready to send messages');
     }
 });
 
-// Form submission endpoint
 app.post('/submit-form.php', async (req, res) => {
     try {
         const { name, email, company, projectType, budget, timeline, message } = req.body;
 
-        // Validation
         const errors = [];
         if (!name || name.trim() === '') errors.push('Name is required');
         if (!email || email.trim() === '') {
@@ -70,10 +61,9 @@ app.post('/submit-form.php', async (req, res) => {
             });
         }
 
-        // Email content
         const mailOptions = {
-            from: email,
-            to: process.env.RECIPIENT_EMAIL || 'your-email@example.com',
+            from: process.env.SMTP_USER || 'hello@kndr.site',
+            to: process.env.RECIPIENT_EMAIL || 'hello@kndr.site',
             subject: `New Client Application: ${projectType}`,
             text: `
 New Client Application Received
@@ -91,10 +81,8 @@ ${message}
             replyTo: email
         };
 
-        // Send email (comment out if email is not configured)
-        // await transporter.sendMail(mailOptions);
+        await transporter.sendMail(mailOptions);
 
-        // Log application
         const logEntry = `${new Date().toISOString()} - New application from: ${name} (${email}) - Project: ${projectType}\n`;
         fs.appendFileSync('applications.log', logEntry);
 
@@ -111,7 +99,6 @@ ${message}
     }
 });
 
-// Serve the website
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });

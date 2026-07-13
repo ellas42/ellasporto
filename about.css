@@ -1,14 +1,16 @@
-/* About Page */
 .about-content {
     padding: 60px 0;
 }
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 4rem;
     margin-bottom: 4rem;
     align-items: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .about-text h2 {
@@ -24,22 +26,11 @@
 }
 
 .about-image {
-    display: flex;
-    justify-content: center;
+    display: none;
 }
 
 .placeholder-image {
-    width: 100%;
-    max-width: 400px;
-    height: 400px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.25rem;
-    font-weight: 500;
+    display: none;
 }
 
 .skills-section,
@@ -108,11 +99,9 @@
     color: var(--text-light);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .about-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
 }
-

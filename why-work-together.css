@@ -1,4 +1,3 @@
-/* Why Work Together Page */
 .why-content {
     padding: 60px 0;
 }
@@ -96,7 +95,6 @@
     color: var(--text-light);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .why-intro h2 {
         font-size: 2rem;

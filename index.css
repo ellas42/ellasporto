@@ -1,6 +1,3 @@
-/* ==========================================
-   ROOT & RESET
-   ========================================== */
 :root {
   --black: #0D0D0D;
   --dark: #262626;
@@ -49,9 +46,6 @@ img { max-width: 100%; display: block; }
 .dot { color: var(--gold); }
 .mt-lg { margin-top: 2.5rem; display: inline-block; }
 
-/* ==========================================
-   CUSTOM CURSOR
-   ========================================== */
 .cursor {
   width: 8px; height: 8px;
   background: var(--gold);
@@ -86,17 +80,13 @@ body:has(button:hover) .cursor-follower {
   border-color: rgba(201, 169, 110, 0.7);
 }
 
-/* ==========================================
-   SCROLLBAR
-   ========================================== */
+
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--dark); }
 ::-webkit-scrollbar-thumb { background: var(--mid); border-radius: 2px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
 
-/* ==========================================
-   NAVIGATION
-   ========================================== */
+
 .nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -184,7 +174,6 @@ body:has(button:hover) .cursor-follower {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Mobile Menu */
 .mobile-menu {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -211,9 +200,7 @@ body:has(button:hover) .cursor-follower {
 }
 .mobile-menu a:hover { color: var(--white); }
 
-/* ==========================================
-   BUTTONS
-   ========================================== */
+
 .btn-primary {
   display: inline-flex; align-items: center; gap: 0.5rem;
   background: var(--gold);
@@ -252,9 +239,7 @@ body:has(button:hover) .cursor-follower {
 
 .full-width { width: 100%; justify-content: center; }
 
-/* ==========================================
-   SECTION SHARED
-   ========================================== */
+
 .section {
   padding: var(--section-pad) 4rem;
   max-width: var(--container);
@@ -301,9 +286,6 @@ body:has(button:hover) .cursor-follower {
   pointer-events: none;
 }
 
-/* ==========================================
-   HERO
-   ========================================== */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -421,7 +403,6 @@ body:has(button:hover) .cursor-follower {
   pointer-events: none;
 }
 
-/* Animations */
 .animate-up {
   opacity: 0;
   transform: translateY(30px);
@@ -438,76 +419,19 @@ body:has(button:hover) .cursor-follower {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ==========================================
-   ABOUT
-   ========================================== */
+
 .about {
   border-top: 1px solid rgba(255,255,255,0.06);
 }
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
+  grid-template-columns: 1fr;
   gap: 6rem;
   align-items: start;
 }
 
-.about-left { display: flex; flex-direction: column; gap: 3rem; }
 
-.about-img-wrap {
-  position: relative;
-  width: 320px;
-}
-
-.about-img-placeholder {
-  width: 320px; height: 380px;
-  background: var(--dark);
-  display: flex; align-items: center; justify-content: center;
-  position: relative;
-  z-index: 1;
-}
-
-.about-img-placeholder span {
-  font-family: var(--font-display);
-  font-size: 5rem;
-  color: rgba(255,255,255,0.08);
-  font-weight: 600;
-}
-
-.about-img-frame {
-  position: absolute;
-  top: 16px; left: 16px;
-  right: -16px; bottom: -16px;
-  border: 1px solid rgba(201, 169, 110, 0.25);
-  z-index: 0;
-}
-
-.about-stats {
-  display: flex;
-  gap: 2.5rem;
-}
-
-.stat {
-  display: flex;
-  flex-direction: column;
-}
-
-.stat-num {
-  font-family: var(--font-display);
-  font-size: 3rem;
-  font-weight: 300;
-  color: var(--white);
-  line-height: 1;
-}
-
-.stat-label {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--mid);
-  margin-top: 0.3rem;
-}
 
 .about-text {
   color: var(--light);
@@ -537,9 +461,6 @@ body:has(button:hover) .cursor-follower {
   flex-shrink: 0;
 }
 
-/* ==========================================
-   WHY
-   ========================================== */
 .why {
   border-top: 1px solid rgba(255,255,255,0.06);
   background: linear-gradient(180deg, var(--black) 0%, rgba(38,38,38,0.3) 50%, var(--black) 100%);
@@ -595,9 +516,7 @@ body:has(button:hover) .cursor-follower {
   line-height: 1.7;
 }
 
-/* ==========================================
-   PROJECTS CAROUSEL
-   ========================================== */
+
 .projects {
   border-top: 1px solid rgba(255,255,255,0.06);
 }
@@ -645,6 +564,7 @@ body:has(button:hover) .cursor-follower {
   transform: scale(1.05);
 }
 
+
 .project-thumb-label {
   position: absolute;
   top: 1rem; left: 1rem;
@@ -663,13 +583,14 @@ body:has(button:hover) .cursor-follower {
   color: rgba(255,255,255,0.08);
   position: relative;
   z-index: 1;
-  transition: transform 0.4s var(--ease-out), color 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  height: 70%;
+  margin-top: 30px;
 }
 
-.project-card:hover .project-thumb-icon {
-  transform: scale(1.15) rotate(15deg);
-  color: rgba(201, 169, 110, 0.2);
-}
 
 .project-info {
   padding: 2rem;
@@ -777,9 +698,6 @@ body:has(button:hover) .cursor-follower {
 
 #currentSlide { color: var(--gold); }
 
-/* ==========================================
-   CONTACT
-   ========================================== */
 .contact {
   border-top: 1px solid rgba(255,255,255,0.06);
 }
@@ -832,7 +750,6 @@ body:has(button:hover) .cursor-follower {
   background: var(--gold-dim);
 }
 
-/* Form */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -901,9 +818,7 @@ body:has(button:hover) .cursor-follower {
 
 .form-success.show { display: block; }
 
-/* ==========================================
-   FOOTER
-   ========================================== */
+
 .footer {
   background: var(--dark);
   border-top: 1px solid rgba(255,255,255,0.06);
@@ -972,9 +887,7 @@ body:has(button:hover) .cursor-follower {
   letter-spacing: 0.05em;
 }
 
-/* ==========================================
-   SCROLL REVEAL
-   ========================================== */
+
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -992,9 +905,6 @@ body:has(button:hover) .cursor-follower {
 .reveal-delay-4 { transition-delay: 0.4s; }
 .reveal-delay-5 { transition-delay: 0.5s; }
 
-/* ==========================================
-   PROJECT DETAIL PAGES
-   ========================================== */
 .detail-hero {
   min-height: 60vh;
   display: flex;
@@ -1169,9 +1079,6 @@ body:has(button:hover) .cursor-follower {
   display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;
 }
 
-/* ==========================================
-   RESPONSIVE
-   ========================================== */
 @media (max-width: 1024px) {
   .about-grid { grid-template-columns: 1fr; gap: 4rem; }
   .about-img-wrap { margin: 0 auto; }

@@ -1,8 +1,4 @@
-/* ==========================================
-   PORTFOLIO SCRIPT — VANILLA JS
-   ========================================== */
 
-// ── Custom Cursor ──────────────────────────
 const cursor = document.getElementById('cursor');
 const cursorFollower = document.getElementById('cursorFollower');
 
@@ -37,7 +33,6 @@ if (cursor && cursorFollower) {
   });
 }
 
-// ── Nav Scroll ─────────────────────────────
 const nav = document.getElementById('nav');
 if (nav) {
   window.addEventListener('scroll', () => {
@@ -45,7 +40,6 @@ if (nav) {
   });
 }
 
-// ── Mobile Menu ────────────────────────────
 const navToggle = document.getElementById('navToggle');
 const mobileMenu = document.getElementById('mobileMenu');
 const mobLinks = document.querySelectorAll('.mob-link');
@@ -66,7 +60,6 @@ if (navToggle && mobileMenu) {
   });
 }
 
-// ── Carousel ───────────────────────────────
 (function initCarousel() {
   const track = document.getElementById('carouselTrack');
   const prevBtn = document.getElementById('prevBtn');
@@ -108,7 +101,6 @@ if (navToggle && mobileMenu) {
     d.addEventListener('click', () => updateCarousel(parseInt(d.dataset.dot)));
   });
 
-  // Touch/drag swipe
   track.addEventListener('mousedown', (e) => {
     isDragging = true;
     startX = e.clientX;
@@ -151,7 +143,6 @@ if (navToggle && mobileMenu) {
   updateCarousel(0);
 })();
 
-// ── Scroll Reveal ──────────────────────────
 function initScrollReveal() {
   const targets = document.querySelectorAll(
     '.about-grid, .why-card, .project-card, .contact-grid, .footer-top, ' +
@@ -176,7 +167,6 @@ function initScrollReveal() {
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 }
 
-// ── Counter Animation ──────────────────────
 function initCounters() {
   const counters = document.querySelectorAll('.stat-num');
   if (!counters.length) return;
@@ -205,7 +195,6 @@ function initCounters() {
   counters.forEach(el => observer.observe(el));
 }
 
-// ── Contact Form ───────────────────────────
 function initContactForm() {
   const form = document.getElementById('contactForm');
   const successMsg = document.getElementById('formSuccess');
@@ -220,7 +209,6 @@ function initContactForm() {
     btn.disabled = true;
     btn.querySelector('span').textContent = 'Sending...';
 
-    // Simulate async send
     setTimeout(() => {
       form.reset();
       btn.disabled = false;
@@ -232,7 +220,6 @@ function initContactForm() {
     }, 1800);
   });
 
-  // Input focus effects
   const inputs = form.querySelectorAll('input, textarea');
   inputs.forEach(input => {
     input.addEventListener('focus', () => {
@@ -244,7 +231,6 @@ function initContactForm() {
   });
 }
 
-// ── Smooth Nav Links ───────────────────────
 function initSmoothNav() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
@@ -258,7 +244,6 @@ function initSmoothNav() {
   });
 }
 
-// ── Active Nav Highlight ───────────────────
 function initActiveNav() {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
@@ -280,7 +265,6 @@ function initActiveNav() {
   sections.forEach(s => observer.observe(s));
 }
 
-// ── Subtle Parallax on Hero ────────────────
 function initHeroParallax() {
   const heroBg = document.querySelector('.hero-bg-grid');
   const heroNum = document.querySelector('.hero-number');
@@ -296,7 +280,6 @@ function initHeroParallax() {
   });
 }
 
-// ── Init ───────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initCounters();
